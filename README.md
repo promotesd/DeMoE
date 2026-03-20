@@ -73,14 +73,6 @@ Organize them in `your dataset root dir` folder as follows:
 python test.py --config_file 'path/to/model_dir/configs.yaml'
 ```
 
-## Citation
-If you find this code useful for your research, please cite our paper.
-
-```tex
-@inproceedings{},
-  year={2025}
-}
-```
 
 ## Acknowledgments
 Some components of this code implementation are adopted from [CLIP](https://github.com/openai/CLIP), [IRRA](https://github.com/anosorae/IRRA). We sincerely appreciate for their contributions.
