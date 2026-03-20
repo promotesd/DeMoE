@@ -213,11 +213,9 @@ def process_single_image(model, image_path, transform, out_root, num_experts=6, 
 def main():
     args = get_args()
 
-    # ===== 修改这里 =====
     args.dataset_name = "RSICD"
     ckpt_path = r"/share/zhangyudong6-nfs/AAAZLYH/code/DeMoE/logs/RSICD/SMA +LB + DR-20251018_214727_baseline/best.pth"
 
-    # 你要处理的多张图像
     image_paths = [
         r"/share/zhangyudong6-nfs/AAAZLYH/dataset/RSITR-dataset/RSICD/train/00001.jpg",
         r"/share/zhangyudong6-nfs/AAAZLYH/dataset/RSITR-dataset/RSICD/train/00002.jpg",

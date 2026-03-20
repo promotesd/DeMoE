@@ -17,7 +17,7 @@ from utils.iotools import load_train_configs
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="test")
-    parser.add_argument("--config_file", default='../logs/CUHK-PEDES/20240810_110716_baseline/configs.yaml')
+    parser.add_argument("--config_file", default='../logs/RSICD/20240810_110716_baseline/configs.yaml')
     args = parser.parse_args()
     args = load_train_configs(args.config_file)
 

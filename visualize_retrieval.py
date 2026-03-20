@@ -105,7 +105,6 @@ def encode_all_images(model, img_paths: List[str], transform, batch_size: int = 
             feat = feat[0]
         feat = feat.float()
 
-        # IRRA 返回 [B, D]；底层 CLIP 可能返回 [B, N, D]
         if feat.dim() == 3:
             feat = feat[:, 0, :]
 
@@ -246,8 +245,7 @@ def collect_t2i_cases(ds,
 def main():
     args = get_args()
 
-    # ====== 你可以在这里直接固定参数 ======
-    args.dataset_name = "RSICD"   # 改成 RSITMD / Sydney_captions / UCM_captions 也可以
+    args.dataset_name = "RSICD"   # RSITMD / Sydney_captions / UCM_captions 
     args.val_dataset = "test"
 
     ckpt_path = r"/share/zhangyudong6-nfs/AAAZLYH/code/DeMoE/logs/RSICD/SMA +LB + DR-20251018_214727_baseline/best.pth"
@@ -277,7 +275,7 @@ def main():
     out_dir = os.path.join("vis_outputs", "retrieval_cases")
     os.makedirs(out_dir, exist_ok=True)
 
-    # 保存正确案例
+    # 正确案例
     for i, case in enumerate(correct_cases, start=1):
         save_path = os.path.join(out_dir, f"correct_{i}.png")
         draw_t2i_case(
@@ -290,7 +288,7 @@ def main():
             save_path=save_path
         )
 
-    # 保存错误案例
+    # 错误案例
     for i, case in enumerate(wrong_cases, start=1):
         save_path = os.path.join(out_dir, f"wrong_{i}.png")
         draw_t2i_case(

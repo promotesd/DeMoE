@@ -31,10 +31,6 @@ DATASET_FACTORY = {
 }
 
 
-# =========================
-# 基础函数
-# =========================
-
 def build_transform(img_size=(384, 128)):
     mean = [0.48145466, 0.4578275, 0.40821073]
     std = [0.26862954, 0.26130258, 0.27577711]
@@ -89,17 +85,12 @@ def decode_tokens(token_tensor, tokenizer):
 
 
 def clean_token_string(tok: str):
-    # 简单清理，避免图上太乱
     tok = tok.replace("</w>", "")
     tok = tok.replace("<|startoftext|>", "<SOT>")
     tok = tok.replace("<|endoftext|>", "<EOT>")
     tok = tok.replace("<|mask|>", "<MASK>")
     return tok
 
-
-# =========================
-# 抽取 routing
-# =========================
 
 @torch.no_grad()
 def get_text_routing(model, caption: str, text_length=77):
@@ -124,10 +115,6 @@ def get_image_routing(model, image_path, transform):
     x, l_aux, routing_list = outputs
     return img_pil, routing_list
 
-
-# =========================
-# 熵计算
-# =========================
 
 def compute_layer_entropy(routing_list):
     """
@@ -173,9 +160,7 @@ def collect_usage_matrix(routing_list, num_experts):
     return np.stack(usage, axis=0)
 
 
-# =========================
-# 作图函数：文本 routing
-# =========================
+
 
 def plot_text_token_layer_routing(token_list, routing_list, save_path, remove_sot=False):
     mat = compute_token_layer_top1_matrix(routing_list, remove_cls=False)  # [layer, token]
@@ -212,10 +197,6 @@ def plot_text_expert_usage_heatmap(routing_list, num_experts, save_path):
     plt.savefig(save_path, dpi=220, bbox_inches="tight")
     plt.close()
 
-
-# =========================
-# 作图函数：熵
-# =========================
 
 def plot_single_entropy_curve(entropy_values, title, save_path):
     plt.figure(figsize=(7, 4))
@@ -274,9 +255,6 @@ def plot_dataset_average_entropy(all_img_entropy, all_txt_entropy, save_path):
     plt.close()
 
 
-# =========================
-# 保存文本
-# =========================
 
 def save_token_list(token_list, save_path):
     with open(save_path, "w", encoding="utf-8") as f:
@@ -294,10 +272,6 @@ def save_entropy_stats(img_entropy, txt_entropy, save_path):
         for i, v in enumerate(txt_entropy):
             f.write(f"Layer {i}: {v:.6f}\n")
 
-
-# =========================
-# 单样本处理
-# =========================
 
 def process_single_sample(model,
                           image_path,
@@ -367,14 +341,10 @@ def process_single_sample(model,
     return img_entropy, txt_entropy
 
 
-# =========================
-# 主函数：批量处理
-# =========================
 
 def main():
     args = get_args()
 
-    # ===== 修改这里 =====
     args.dataset_name = "RSICD"
     args.val_dataset = "test"
 
@@ -382,17 +352,8 @@ def main():
     out_root = r"/share/zhangyudong6-nfs/AAAZLYH/code/DeMoE/vis_outputs/routing_analysis"
     os.makedirs(out_root, exist_ok=True)
 
-    # 方式 1：从数据集里按索引挑多个样本
     selected_indices = [0, 1, 2, 3, 4]
 
-    # 方式 2：你也可以自己手动写图片和文本
-    # custom_samples = [
-    #     {
-    #         "sample_name": "case_001",
-    #         "image_path": ".../00001.jpg",
-    #         "caption": "..."
-    #     },
-    # ]
 
     ds = load_dataset(args)
     model = load_model(args, ckpt_path)
@@ -429,7 +390,7 @@ def main():
         save_path=os.path.join(out_root, "dataset_average_entropy.png")
     )
 
-    print(f"[OK] Saved routing analysis to: {out_root}")
+    print(f"Saved routing analysis to: {out_root}")
 
 
 if __name__ == "__main__":

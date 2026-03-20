@@ -100,18 +100,11 @@ if __name__ == '__main__':
             param.requires_grad_(True)
 
 
-    ##反向传播原版
     name_update = ["adapter_mlp", "ln_3", "experts", "feed_forward", "ln_4", "param", "v2i_proj", "task_param"]
     for name, param in model.named_parameters():
         if any(ntu in name for ntu in name_update):
             param.requires_grad_(True)
-    ##仅仅只有Adapter版本
-    # name_update = ["mlp.c_fc", "mlp.c_proj"]
-    # for name, param in model.named_parameters():
-    #     if any(ntu in name for ntu in name_update):
-    #         param.requires_grad_(True)
 
-    # Double check
     enabled = set()
     disabled = set()
     for name, param in model.named_parameters():
@@ -123,7 +116,7 @@ if __name__ == '__main__':
     print(f"-----" * 30)
     print(f"Parameters not to be updated: {disabled}")
     
-    #### output parameter
+    ## output parameter
     get_parameter(model)
     
     optimizer = build_optimizer(args, model)

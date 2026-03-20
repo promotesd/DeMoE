@@ -22,10 +22,6 @@
 # --reduction 8 
 
 
-# CUHK-PEDES
-# ICFG-PEDES
-# RSTPReid
-
 # CUDA_VISIBLE_DEVICES=0 \
 # python train.py \
 # --name baseline \
