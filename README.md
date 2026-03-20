@@ -16,27 +16,35 @@ easydict
 ```
 
 ### Prepare Datasets
-Download the CUHK-PEDES dataset from [here](https://github.com/ShuangLI59/Person-Search-with-Natural-Language-Description), ICFG-PEDES dataset from [here](https://github.com/zifyloo/SSAN) and RSTPReid dataset form [here](https://github.com/NjtechCVLab/RSTPReid-Dataset)
-https://huggingface.co/datasets/PeterPanTheGenius/CUHK-PEDES
+Download the RSICD dataset from [here](https://github.com/201528014227051/RSICD_optimal?tab=readme-ov-file), RSITMD dataset from [here](https://www.modelscope.cn/datasets/YepingZhao/RSITMD),Sydney_captions form [here](https://www.modelscope.cn/datasets/YepingZhao/Sydney-Captions) and UCM_captions form [here](https://aistudio.baidu.com/datasetdetail/90740)
 
 
 Organize them in `your dataset root dir` folder as follows:
 ```
 |-- your dataset root dir/
-|   |-- <CUHK-PEDES>/
+|   |-- <RSICD>/
 |       |-- imgs
-|            |-- cam_a
-|            |-- cam_b
-|            |-- ...
-|       |-- reid_raw.json
-|
-|   |-- <ICFG-PEDES>/
-|       |-- imgs
-|            |-- test
 |            |-- train 
-|       |-- ICFG_PEDES.json
+|            |-- val
+|            |-- test
+|       |-- rsicd_train.json
+|       |-- rsicd_val.json
+|       |-- rsicd_test.json
 |
-|   |-- <RSTPReid>/
+|   |-- <RSITMD>/
+|       |-- imgs
+|            |-- train 
+|            |-- val
+|            |-- test
+|       |-- rsitmd_train.json
+|       |-- rsitmd_val.json
+|       |-- rsitmd_test.json
+|
+|   |-- <Sydney_captions>/
+|       |-- imgs
+|       |-- data_captions.json
+|
+|   |-- <UCM_captions>/
 |       |-- imgs
 |       |-- data_captions.json
 ```
@@ -75,4 +83,4 @@ If you find this code useful for your research, please cite our paper.
 ```
 
 ## Acknowledgments
-Some components of this code implementation are adopted from [CLIP](https://github.com/openai/CLIP), [IRRA](https://github.com/anosorae/IRRA) and [Mixtral](https://github.com/mistralai/mistral-inference). We sincerely appreciate for their contributions.
+Some components of this code implementation are adopted from [CLIP](https://github.com/openai/CLIP), [IRRA](https://github.com/anosorae/IRRA). We sincerely appreciate for their contributions.

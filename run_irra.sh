@@ -58,20 +58,20 @@ python train.py \
 --reduction 8 
 
 
-CUDA_VISIBLE_DEVICES=4 \
-python train.py \
---name baseline \
---img_aug \
---batch_size 128 \
---MLM \
---dataset_name "RSITMD" \
---loss_names 'sdm' \
---num_epoch 80 \
---root_dir '/share/zhangyudong6-nfs/AAAZLYH/dataset/RSITR-dataset' \
---lr 5e-5 \
---num_experts 6 \
---topk 2 \
---reduction 8 
+# CUDA_VISIBLE_DEVICES=4 \
+# python train.py \
+# --name baseline \
+# --img_aug \
+# --batch_size 128 \
+# --MLM \
+# --dataset_name "RSITMD" \
+# --loss_names 'sdm' \
+# --num_epoch 80 \
+# --root_dir '/share/zhangyudong6-nfs/AAAZLYH/dataset/RSITR-dataset' \
+# --lr 5e-5 \
+# --num_experts 6 \
+# --topk 2 \
+# --reduction 8 
 
 
 # CUDA_VISIBLE_DEVICES=0 \
