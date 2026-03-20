@@ -1,1 +1,1 @@
-python test.py --config_file '/share/zhangyudong6-nfs/AAAZLYH/code/DM-Adapter/logs/RSICD/20251112_235705_baseline/configs.yaml'
+python test.py --config_file '/share/zhangyudong6-nfs/AAAZLYH/code/DeMoE/logs/RSICD/20251112_235705_baseline/configs.yaml'

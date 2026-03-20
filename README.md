@@ -1,4 +1,4 @@
-# DM-Adapter: Domain-Aware Mixture-of-Adapters for Text-Based Person Retrieval
+# DeMoE: Domain-Enhanced Mixture-of-Experts Adapter for Parameter-Efficient Remote Sensing Image-Text Retrieval
 
 
 ## Highlights
@@ -69,10 +69,7 @@ python test.py --config_file 'path/to/model_dir/configs.yaml'
 If you find this code useful for your research, please cite our paper.
 
 ```tex
-@inproceedings{liu2025DM-Adapter,
-  title={DM-Adapter: Domain-Aware Mixture-of-Adapters for Text-Based Person Retrieval},
-  author={Liu, Yating and Liu, Zimo and Lan, Xiangyuan and Yang, Wenming and Li, Yaowei and Liao, Qingmin},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+@inproceedings{},
   year={2025}
 }
 ```

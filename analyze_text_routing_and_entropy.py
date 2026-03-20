@@ -378,8 +378,8 @@ def main():
     args.dataset_name = "RSICD"
     args.val_dataset = "test"
 
-    ckpt_path = r"/share/zhangyudong6-nfs/AAAZLYH/code/DM-Adapter/logs/RSICD/SMA +LB + DR-20251018_214727_baseline/best.pth"
-    out_root = r"/share/zhangyudong6-nfs/AAAZLYH/code/DM-Adapter/vis_outputs/routing_analysis"
+    ckpt_path = r"/share/zhangyudong6-nfs/AAAZLYH/code/DeMoE/logs/RSICD/SMA +LB + DR-20251018_214727_baseline/best.pth"
+    out_root = r"/share/zhangyudong6-nfs/AAAZLYH/code/DeMoE/vis_outputs/routing_analysis"
     os.makedirs(out_root, exist_ok=True)
 
     # 方式 1：从数据集里按索引挑多个样本

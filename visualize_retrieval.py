@@ -250,7 +250,7 @@ def main():
     args.dataset_name = "RSICD"   # 改成 RSITMD / Sydney_captions / UCM_captions 也可以
     args.val_dataset = "test"
 
-    ckpt_path = r"/share/zhangyudong6-nfs/AAAZLYH/code/DM-Adapter/logs/RSICD/SMA +LB + DR-20251018_214727_baseline/best.pth"
+    ckpt_path = r"/share/zhangyudong6-nfs/AAAZLYH/code/DeMoE/logs/RSICD/SMA +LB + DR-20251018_214727_baseline/best.pth"
     topk = 5
     num_correct = 5
     num_wrong = 5

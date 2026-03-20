@@ -2,7 +2,7 @@ import argparse
 
 
 def get_args():
-    parser = argparse.ArgumentParser(description="dm-adapter Args")
+    parser = argparse.ArgumentParser(description="DeMoE Args")
     ######################## general settings ########################
     parser.add_argument("--local_rank", default=0, type=int)
     parser.add_argument("--name", default="irra_test", help="experiment name to save")

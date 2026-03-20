@@ -26,7 +26,7 @@ def do_train(start_epoch, args, model, train_loader, evaluator, optimizer,
     arguments["num_epoch"] = num_epoch
     arguments["iteration"] = 0
 
-    logger = logging.getLogger("dm-adapter.train")
+    logger = logging.getLogger("DeMoE.train")
     logger.info('start training')
 
     meters = {
@@ -140,7 +140,7 @@ def do_train(start_epoch, args, model, train_loader, evaluator, optimizer,
 
 
 def do_inference(model, test_img_loader, test_txt_loader):
-    logger = logging.getLogger("dm-adapter.test")
+    logger = logging.getLogger("DeMoE.test")
     logger.info("Enter inferencing")
 
     evaluator = Evaluator(test_img_loader, test_txt_loader)

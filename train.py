@@ -68,7 +68,7 @@ if __name__ == '__main__':
 
 
     parent = logging.getLogger("IRRA")
-    eval_logger = logging.getLogger("dm-adapter.eval")
+    eval_logger = logging.getLogger("DeMoE.eval")
     eval_logger.setLevel(parent.level)
     for h in parent.handlers:
         eval_logger.addHandler(h)

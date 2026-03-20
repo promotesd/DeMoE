@@ -215,7 +215,7 @@ def main():
 
     # ===== 修改这里 =====
     args.dataset_name = "RSICD"
-    ckpt_path = r"/share/zhangyudong6-nfs/AAAZLYH/code/DM-Adapter/logs/RSICD/SMA +LB + DR-20251018_214727_baseline/best.pth"
+    ckpt_path = r"/share/zhangyudong6-nfs/AAAZLYH/code/DeMoE/logs/RSICD/SMA +LB + DR-20251018_214727_baseline/best.pth"
 
     # 你要处理的多张图像
     image_paths = [
@@ -233,7 +233,7 @@ def main():
         
     ]
 
-    out_root = r"/share/zhangyudong6-nfs/AAAZLYH/code/DM-Adapter/vis_outputs/routing_cases"
+    out_root = r"/share/zhangyudong6-nfs/AAAZLYH/code/DeMoE/vis_outputs/routing_cases"
     os.makedirs(out_root, exist_ok=True)
 
     model = load_model(args, ckpt_path)
